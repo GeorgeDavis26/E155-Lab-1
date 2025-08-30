@@ -22,22 +22,6 @@ module top(
 			counter <= counter + 1;
 		end
 	
-	// logic to control led[0]
-	always_comb 
-	begin
-		casex(s)
-			4'b0001:		led_state = 3'bXX1;	//turn led[0] on 
-			4'b0010:		led_state = 3'bXX1;	//turn led[0] on 
-			default:		led_state = 3'bXX0;	//default led[0] off
-		endcase	
-		
-	// logic to control led[1]
-		casex(s)
-			4'b1100: 		led_state = 3'bX1X;	//turn led[1] on 
-			default:		led_state = 3'bX0X;	//default led[1] off
-		endcase
-	end
-	
 	assign led[2] = counter[13];
 	assign led[1] = led_state[1];
 	assign led[0] = led_state[0];		
