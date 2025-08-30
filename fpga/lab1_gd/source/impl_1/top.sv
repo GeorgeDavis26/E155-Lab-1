@@ -1,5 +1,5 @@
-// gd top SV file
-// parent file for led_control.sv and seven_seg_disp.sv
+// top.sv
+// parent file for lab-1 modules
 // george davis gdavis@hmc.edu
 
 

@@ -1,4 +1,4 @@
-// gd seven_seg_disp SV file
+// seven_seg_disp.sv
 // encodes a 7 segment display to show the first 16 Hexidecimal Digits
 // george davis gdavis@hmc.edu
 

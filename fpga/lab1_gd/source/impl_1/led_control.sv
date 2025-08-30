@@ -1,4 +1,4 @@
-// led_control SV file
+// led_control.sv
 // encodes 3 LEDs to display board functionality
 // george davis gdavis@hmc.edu
 
