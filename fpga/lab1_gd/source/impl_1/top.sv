@@ -21,10 +21,11 @@ module top(
 			counter <= counter + 1;
 		end
 	
-	led_controller	led_controller(s, counter, led);
-	seven_seg_disp	seven_seg_disp(s, counter, seg);
+	led_controller	led_controller(s, counter, led_state);
+	seven_seg_disp	seven_seg_disp(s, counter, seg_state);
 
-	assign 
+    assign seg = seg_state
+    assign led = led_state
 endmodule
 	
 

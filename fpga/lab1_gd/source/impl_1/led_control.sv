@@ -29,9 +29,7 @@ output	logic led[2:0]
 			default:		led_state = 3'b1XX; //default led[2] off 
 		endcase
 	end
-
-	assign led[2] = led_state[2];
-	assign led[1] = led_state[1];
-	assign led[0] = led_state[0];		
+    
+    assign led = led_state
 
 endmodule
