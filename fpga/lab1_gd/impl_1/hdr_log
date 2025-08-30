@@ -5,10 +5,10 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Sat Aug 30 10:50:39 2025
+Sat Aug 30 13:27:45 2025
 
 
-Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/impl_1/lab1_gd_impl_1_lattice.synproj -logfile lab1_gd_impl_1_lattice.srp -gui -msgset C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/promote.xml 
+Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/impl_1/lab1_gd_impl_1_lattice.synproj -logfile lab1_gd_impl_1_lattice.srp -gui -msgset C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/promote.xml 
 
 INFO <35002000> - synthesis: Lattice Synthesis Engine launched.
 
@@ -109,13 +109,13 @@ The -comp option is FALSE.
 The -syn option is FALSE.
 
 Output HDL filename: lab1_gd_impl_1.vm
--path C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd (searchpath added)
--path C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/impl_1 (searchpath added)
+-path C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd (searchpath added)
+-path C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/impl_1 (searchpath added)
 -path C:/lscc/radiant/2024.2/ispfpga/ice40tp/data (searchpath added)
 Mixed language design
 CRITICAL <35001476> - synthesis: A top-level module has not been specified for the mixed language design.
 Verilog design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v
-Verilog design file: C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/source/impl_1/top.sv
+Verilog design file: C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/top.sv
 VHDL library: pmi
 VHDL design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd
 WARNING <35935050> - synthesis: input port TRIM9 is not connected on this instance. VDB-5050

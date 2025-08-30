@@ -23,19 +23,18 @@ module top(
 		end
 	
 	// logic to control led[0]
-	always_comb begin
-		case(s)
-			4'b0001:		led_state[0] = 3'b001;	//turn led[0] on 
-			4'b0010:		led_state[0] = 3'b001;	//turn led[0] on 
-			default:		led_state[0] = 3'b001;	//default led[0] off
-		endcase
-	end
-	
+	always_comb 
+	begin
+		casex(s)
+			4'b0001:		led_state = 3'bXX1;	//turn led[0] on 
+			4'b0010:		led_state = 3'bXX1;	//turn led[0] on 
+			default:		led_state = 3'bXX0;	//default led[0] off
+		endcase	
+		
 	// logic to control led[1]
-	always_comb begin
-		case(s)
-			4'b1100: 		led_state[1] = 0;	//turn led[1] on 
-			default:		led_state[1] = 1;	//default led[1] off
+		casex(s)
+			4'b1100: 		led_state = 3'bX1X;	//turn led[1] on 
+			default:		led_state = 3'bX0X;	//default led[1] off
 		endcase
 	end
 	
