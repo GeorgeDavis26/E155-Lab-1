@@ -9,18 +9,7 @@ module top(
 	output	logic seg[6:0]
 	);
 	
-	logic int_osc;
-	logic [15:0] counter = 0;
-	
-	//Internal high-speed oscillator
-	HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
-	
-	//Simple clock divider
-	always_ff @(posedge int_osc)
-		begin
-			counter <= counter + 1;
-		end
-	
+	high_speed_osc	high_speed_osc(counter);
 	led_controller	led_controller(s, counter, led_state);
 	seven_seg_disp	seven_seg_disp(s, counter, seg_state);
 
