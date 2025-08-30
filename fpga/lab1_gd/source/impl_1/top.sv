@@ -10,7 +10,6 @@ module top(
 	);
 	
 	logic int_osc;
-	logic led_state[2:0];
 	logic [13:0] counter = 0;
 	
 	//Internal high-speed oscillator
@@ -22,9 +21,6 @@ module top(
 			counter <= counter + 1;
 		end
 	
-	assign led[2] = counter[13];
-	assign led[1] = led_state[1];
-	assign led[0] = led_state[0];		
 
 endmodule
 	

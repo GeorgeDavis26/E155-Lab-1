@@ -2,9 +2,12 @@
 // encodes a 7 segment display to show the first 16 Hexidecimal Digits
 // george davis gavis@hmc.edu
 
-module led_control 
-
-    
+module led_control(
+input	logic s[3:0],
+input   logic counter[13:0],
+output	logic led[2:0]
+);
+	logic led_state[2:0];
 	always_comb 
 	begin
 	// logic to control led[0]
@@ -27,5 +30,8 @@ module led_control
 		endcase
 	end
 
+	assign led[2] = led_state[2];
+	assign led[1] = led_state[1];
+	assign led[0] = led_state[0];		
 
 endmodule
