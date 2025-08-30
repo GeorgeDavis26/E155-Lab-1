@@ -1,6 +1,6 @@
 // led_control SV file
-// encodes a 7 segment display to show the first 16 Hexidecimal Digits
-// george davis gavis@hmc.edu
+// encodes 3 LEDs to display board functionality
+// george davis gdavis@hmc.edu
 
 module led_control(
 input	logic s[3:0],

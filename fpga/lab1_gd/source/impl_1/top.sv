@@ -1,6 +1,6 @@
 // gd top SV file
-// encodes a 7 segment display to show the first 16 Hexidecimal Digits
-// george davis gavis@hmc.edu
+// parent file for led_control.sv and seven_seg_disp.sv
+// george davis gdavis@hmc.edu
 
 
 module top(
@@ -10,7 +10,7 @@ module top(
 	);
 	
 	logic int_osc;
-	logic [13:0] counter = 0;
+	logic [15:0] counter = 0;
 	
 	//Internal high-speed oscillator
 	HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
@@ -21,7 +21,10 @@ module top(
 			counter <= counter + 1;
 		end
 	
+	led_controller	led_controller(s, counter, led);
+	seven_seg_disp	seven_seg_disp(s, counter, seg);
 
+	assign 
 endmodule
 	
 
