@@ -4,17 +4,15 @@
 
 
 module top(
-	input	logic s[3:0],
-	output	logic led[2:0],
-	output	logic seg[6:0]
+	input	logic [3:0] s,
+	output	logic [2:0] led,
+	output	logic [6:0] seg
 	);
 	
 	high_speed_osc	high_speed_osc(counter);
-	led_controller	led_controller(s, counter, led_state);
-	seven_seg_disp	seven_seg_disp(s, counter, seg_state);
+	led_controller	led_controller(s, led);
+	seven_seg_disp	seven_seg_disp(s, seg);
 
-    assign seg = seg_state
-    assign led = led_state
 endmodule
 	
 

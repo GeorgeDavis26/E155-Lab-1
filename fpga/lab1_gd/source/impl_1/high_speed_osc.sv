@@ -3,7 +3,7 @@
 // george davis gdavis@hmc.edu
 
 module high_speed_osc (
-    output  logic   counter
+    output  logic	counter
 );
     logic int_osc;
 	logic [15:0] counter = 0;
