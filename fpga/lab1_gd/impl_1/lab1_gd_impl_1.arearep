@@ -1,8 +1,30 @@
 ----------------------------------------------------------------------
-Report for cell led_control.TECH
-Register bits:  0 of 5280 (0.000%)
-I/O cells:      3
+Report for cell top.TECH
+Register bits:  16 of 5280 (0.303%)
+I/O cells:      14
                                   Cell usage:
                                cell     count   Res Usage(%)
-                                 OB         3          100.0
-                              TOTAL         3
+                               CCU2         9          100.0
+                            FD1P3XZ        16          100.0
+                              HSOSC         1          100.0
+                                 IB         4          100.0
+                               LUT4        13          100.0
+                                 OB        10          100.0
+SUB MODULES
+                        led_control         1
+                     seven_seg_disp         1
+                              TOTAL        55
+----------------------------------------------------------------------
+Report for cell led_control.v1
+Instance Path : led_control
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         6           46.2
+                              TOTAL         6
+----------------------------------------------------------------------
+Report for cell seven_seg_disp.v1
+Instance Path : seven_seg_disp
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         7           53.8
+                              TOTAL         7

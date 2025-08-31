@@ -1,10 +1,11 @@
 // led_control.sv
 // encodes 3 LEDs to display board functionality
 // george davis gdavis@hmc.edu
+// 8/30/2025
 
 module led_control(
 input	logic [3:0] s,
-input	logic [13:0] counter,
+input	logic [15:0] counter,
 output	logic [2:0] led
 );
 	logic [2:0] led_state;

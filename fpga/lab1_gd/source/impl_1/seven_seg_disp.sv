@@ -1,6 +1,7 @@
 // seven_seg_disp.sv
 // encodes a 7 segment display to show the first 16 Hexidecimal Digits
 // george davis gdavis@hmc.edu
+// 8/30/2025
 
 module seven_seg_disp (
 	input	logic [3:0] s,

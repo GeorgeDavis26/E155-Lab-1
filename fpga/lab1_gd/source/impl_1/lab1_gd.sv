@@ -1,7 +1,7 @@
-// top.sv
-// parent file for lab-1 modules
+// lab1_gd.sv
+// top file for lab-1 modules
 // george davis gdavis@hmc.edu
-
+// 8/30/2025
 
 module top(
 	input	logic [3:0] s,
@@ -9,8 +9,19 @@ module top(
 	output	logic [6:0] seg
 	);
 	
-	high_speed_osc	high_speed_osc(counter);
-	led_controller	led_controller(s, led);
+	logic int_osc;
+	logic [15:0] counter = 0;
+	
+	//Internal 48MHz high-speed oscillator
+	HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+	
+	//Simple clock divider
+	always_ff @(posedge int_osc)
+		begin
+			counter <= counter + 1;
+		end
+	
+	led_control		led_control(s, counter, led);
 	seven_seg_disp	seven_seg_disp(s, seg);
 
 endmodule
