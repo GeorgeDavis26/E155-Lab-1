@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Sun Aug 31 14:54:05 2025
+Mapped on: Sun Aug 31 15:23:06 2025
 
 Design Information
 ------------------
@@ -22,8 +22,8 @@ Design Summary
 
    Number of slice registers:  16 out of  5280 (<1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:            33 out of  5280 (1%)
-      Number of logic LUT4s:              15
+   Number of LUT4s:            34 out of  5280 (1%)
+      Number of logic LUT4s:              16
       Number of ripple logic:              9 (18 LUT4s)
    Number of IO sites used:   14 out of 39 (36%)
       Number of IO sites used for general PIO: 14
@@ -53,10 +53,10 @@ Design Summary
       Net VCC_net: 1 loads, 0 SLICEs
    Number of LSRs:  0
    Top 10 highest fanout non-clock nets:
-      Net s_c_0: 7 loads
-      Net s_c_1: 7 loads
-      Net s_c_2: 7 loads
-      Net s_c_3: 7 loads
+      Net s_c_0: 8 loads
+      Net s_c_1: 8 loads
+      Net s_c_2: 8 loads
+      Net s_c_3: 8 loads
       Net VCC_net: 3 loads
       Net counter[11]: 2 loads
       Net counter[13]: 2 loads
@@ -122,11 +122,11 @@ IO (PIO) Attributes
 | led[2]              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
-OSC Summary
------------
+Removed logic
+-------------
 
-OSC 1:                                 Pin/Node Value
-  OSC Instance Name:                            hf_osc.osc_inst
+Block i1 was optimized away.
+
 
                                     Page 2
 
@@ -134,8 +134,11 @@ OSC 1:                                 Pin/Node Value
 
 
 
-OSC Summary (cont)
-------------------
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            hf_osc.osc_inst
   Power UP:                            NODE     VCC_net
   Enable Signal:                       NODE     VCC_net
   OSC Output:                          NODE     int_osc
@@ -159,10 +162,7 @@ Run Time and Memory Usage
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 67 MB
-Checksum -- map: e1d6e293aebab57c6d693b1dcfdd47b58630091
-
-
-
+Checksum -- map: e4fc77a72f492a20d54882dfb8217189de59e49f
 
 
 

@@ -19,6 +19,12 @@ module top(
 	always_ff @(posedge int_osc)
 		begin
 			counter <= counter + 1;
+			if (counter == 'd20001) begin
+				counter = 'd0;
+			end
+			else begin
+				counter <= counter + 1;
+			end
 		end
 	
 	led_control		led_control(s, counter, led);

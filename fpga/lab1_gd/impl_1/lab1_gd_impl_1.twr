@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Sun Aug 31 14:54:15 2025
+Sun Aug 31 15:23:16 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -52,7 +52,7 @@ create_clock -name {int_osc} -period 20.8333 [get_pins {hf_osc.osc_inst/CLKHF }]
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 48.4127%
+Constraint Coverage: 45.5224%
 
 
 1.3  Overall Summary
@@ -104,7 +104,7 @@ seg[4]                                  |                    output
 seg[5]                                  |                    output
 -------------------------------------------------------------------
                                         |                          
-Number of I/O ports without constraint  |                        12
+Number of I/O ports without constraint  |                        14
                                         |                          
 -------------------------------------------------------------------
 
@@ -178,8 +178,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i15/D  (SLICE_R8C15A)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i15/D  (SLICE_R8C31A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 17
@@ -200,55 +200,55 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.000                 12.023  2       
 counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C14B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
 n574                                                         NET DELAY               0.000                 12.300  2       
 counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C14B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
 n239                                                         NET DELAY               0.000                 12.577  2       
 counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C14C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
 n577                                                         NET DELAY               0.000                 12.854  2       
 counter_9_add_4_13/CI1->counter_9_add_4_13/CO1
-                                          SLICE_R8C14C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+                                          SLICE_R8C30C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
 n241                                                         NET DELAY               0.000                 13.131  2       
 counter_9_add_4_15/CI0->counter_9_add_4_15/CO0
-                                          SLICE_R8C14D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+                                          SLICE_R8C30D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
 n580                                                         NET DELAY               0.000                 13.408  2       
 counter_9_add_4_15/CI1->counter_9_add_4_15/CO1
-                                          SLICE_R8C14D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
+                                          SLICE_R8C30D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
 n243                                                         NET DELAY               1.216                 14.901  2       
 counter_9_add_4_17/D0->counter_9_add_4_17/S0
-                                          SLICE_R8C15A       D0_TO_F0_DELAY          0.476                 15.377  1       
+                                          SLICE_R8C31A       D0_TO_F0_DELAY          0.476                 15.377  1       
 counter_15__N_1[15]                                          NET DELAY               0.000                 15.377  1       
 counter_9__i15/D                                             ENDPOINT                0.000                 15.377  1       
 
@@ -273,8 +273,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i14/D  (SLICE_R8C14D)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i14/D  (SLICE_R8C30D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 16
@@ -295,52 +295,52 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.000                 12.023  2       
 counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C14B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
 n574                                                         NET DELAY               0.000                 12.300  2       
 counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C14B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
 n239                                                         NET DELAY               0.000                 12.577  2       
 counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C14C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
 n577                                                         NET DELAY               0.000                 12.854  2       
 counter_9_add_4_13/CI1->counter_9_add_4_13/CO1
-                                          SLICE_R8C14C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+                                          SLICE_R8C30C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
 n241                                                         NET DELAY               0.000                 13.131  2       
 counter_9_add_4_15/CI0->counter_9_add_4_15/CO0
-                                          SLICE_R8C14D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
+                                          SLICE_R8C30D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
 n580                                                         NET DELAY               0.661                 14.069  2       
 counter_9_add_4_15/D1->counter_9_add_4_15/S1
-                                          SLICE_R8C14D       D1_TO_F1_DELAY          0.476                 14.545  1       
+                                          SLICE_R8C30D       D1_TO_F1_DELAY          0.476                 14.545  1       
 counter_15__N_1[14]                                          NET DELAY               0.000                 14.545  1       
 counter_9__i14/D                                             ENDPOINT                0.000                 14.545  1       
 
@@ -365,8 +365,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i13/D  (SLICE_R8C14D)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i13/D  (SLICE_R8C30D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 15
@@ -387,49 +387,49 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.000                 12.023  2       
 counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C14B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
 n574                                                         NET DELAY               0.000                 12.300  2       
 counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C14B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
 n239                                                         NET DELAY               0.000                 12.577  2       
 counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C14C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
 n577                                                         NET DELAY               0.000                 12.854  2       
 counter_9_add_4_13/CI1->counter_9_add_4_13/CO1
-                                          SLICE_R8C14C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
+                                          SLICE_R8C30C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
 n241                                                         NET DELAY               0.661                 13.792  2       
 counter_9_add_4_15/D0->counter_9_add_4_15/S0
-                                          SLICE_R8C14D       D0_TO_F0_DELAY          0.476                 14.268  1       
+                                          SLICE_R8C30D       D0_TO_F0_DELAY          0.476                 14.268  1       
 counter_15__N_1[13]                                          NET DELAY               0.000                 14.268  1       
 counter_9__i13/D                                             ENDPOINT                0.000                 14.268  1       
 
@@ -454,8 +454,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i12/D  (SLICE_R8C14C)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i12/D  (SLICE_R8C30C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 14
@@ -476,46 +476,46 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.000                 12.023  2       
 counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C14B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
 n574                                                         NET DELAY               0.000                 12.300  2       
 counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C14B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
 n239                                                         NET DELAY               0.000                 12.577  2       
 counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C14C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
+                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
 n577                                                         NET DELAY               0.661                 13.515  2       
 counter_9_add_4_13/D1->counter_9_add_4_13/S1
-                                          SLICE_R8C14C       D1_TO_F1_DELAY          0.476                 13.991  1       
+                                          SLICE_R8C30C       D1_TO_F1_DELAY          0.476                 13.991  1       
 counter_15__N_1[12]                                          NET DELAY               0.000                 13.991  1       
 counter_9__i12/D                                             ENDPOINT                0.000                 13.991  1       
 
@@ -540,8 +540,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i11/D  (SLICE_R8C14C)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i11/D  (SLICE_R8C30C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 13
@@ -562,43 +562,43 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.000                 12.023  2       
 counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C14B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
 n574                                                         NET DELAY               0.000                 12.300  2       
 counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C14B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
+                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
 n239                                                         NET DELAY               0.661                 13.238  2       
 counter_9_add_4_13/D0->counter_9_add_4_13/S0
-                                          SLICE_R8C14C       D0_TO_F0_DELAY          0.476                 13.714  1       
+                                          SLICE_R8C30C       D0_TO_F0_DELAY          0.476                 13.714  1       
 counter_15__N_1[11]                                          NET DELAY               0.000                 13.714  1       
 counter_9__i11/D                                             ENDPOINT                0.000                 13.714  1       
 
@@ -623,8 +623,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i10/D  (SLICE_R8C14B)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i10/D  (SLICE_R8C30B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 12
@@ -645,40 +645,40 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.000                 12.023  2       
 counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C14B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
+                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
 n574                                                         NET DELAY               0.661                 12.961  2       
 counter_9_add_4_11/D1->counter_9_add_4_11/S1
-                                          SLICE_R8C14B       D1_TO_F1_DELAY          0.476                 13.437  1       
+                                          SLICE_R8C30B       D1_TO_F1_DELAY          0.476                 13.437  1       
 counter_15__N_1[10]                                          NET DELAY               0.000                 13.437  1       
 counter_9__i10/D                                             ENDPOINT                0.000                 13.437  1       
 
@@ -703,8 +703,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i9/D  (SLICE_R8C14B)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i9/D  (SLICE_R8C30B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 11
@@ -725,37 +725,37 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.000                 11.746  2       
 counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C14A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
+                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
 n237                                                         NET DELAY               0.661                 12.684  2       
 counter_9_add_4_11/D0->counter_9_add_4_11/S0
-                                          SLICE_R8C14B       D0_TO_F0_DELAY          0.476                 13.160  1       
+                                          SLICE_R8C30B       D0_TO_F0_DELAY          0.476                 13.160  1       
 counter_15__N_1[9]                                           NET DELAY               0.000                 13.160  1       
 counter_9__i9/D                                              ENDPOINT                0.000                 13.160  1       
 
@@ -780,8 +780,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i8/D  (SLICE_R8C14A)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i8/D  (SLICE_R8C30A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 10
@@ -802,34 +802,34 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               0.555                 11.469  2       
 counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C14A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
+                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
 n571                                                         NET DELAY               0.661                 12.407  2       
 counter_9_add_4_9/D1->counter_9_add_4_9/S1
-                                          SLICE_R8C14A       D1_TO_F1_DELAY          0.476                 12.883  1       
+                                          SLICE_R8C30A       D1_TO_F1_DELAY          0.476                 12.883  1       
 counter_15__N_1[8]                                           NET DELAY               0.000                 12.883  1       
 counter_9__i8/D                                              ENDPOINT                0.000                 12.883  1       
 
@@ -854,8 +854,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i7/D  (SLICE_R8C14A)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i7/D  (SLICE_R8C30A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 9
@@ -876,31 +876,31 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.000                 10.637  2       
 counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C13D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
+                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
 n235                                                         NET DELAY               1.216                 12.130  2       
 counter_9_add_4_9/D0->counter_9_add_4_9/S0
-                                          SLICE_R8C14A       D0_TO_F0_DELAY          0.476                 12.606  1       
+                                          SLICE_R8C30A       D0_TO_F0_DELAY          0.476                 12.606  1       
 counter_15__N_1[7]                                           NET DELAY               0.000                 12.606  1       
 counter_9__i7/D                                              ENDPOINT                0.000                 12.606  1       
 
@@ -925,8 +925,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C13A)
-Path End         : counter_9__i6/D  (SLICE_R8C13D)
+Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
+Path End         : counter_9__i6/D  (SLICE_R8C29D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 8
@@ -947,28 +947,28 @@ counter_9__i0/CK                                             CLOCK PIN          
 Data Path
 Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C13A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
+counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
 led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
 counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C13A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
+                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
 n229                                                         NET DELAY               0.000                  9.252  2       
 counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C13B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
+                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
 n562                                                         NET DELAY               0.000                  9.529  2       
 counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C13B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
+                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
 n231                                                         NET DELAY               0.000                  9.806  2       
 counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C13C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
+                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
 n565                                                         NET DELAY               0.000                 10.083  2       
 counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C13C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
+                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
 n233                                                         NET DELAY               0.000                 10.360  2       
 counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C13D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
+                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
 n568                                                         NET DELAY               0.661                 11.298  2       
 counter_9_add_4_7/D1->counter_9_add_4_7/S1
-                                          SLICE_R8C13D       D1_TO_F1_DELAY          0.476                 11.774  1       
+                                          SLICE_R8C29D       D1_TO_F1_DELAY          0.476                 11.774  1       
 counter_15__N_1[6]                                           NET DELAY               0.000                 11.774  1       
 counter_9__i6/D                                              ENDPOINT                0.000                 11.774  1       
 
@@ -1040,8 +1040,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_9__i5/Q  (SLICE_R8C13D)
-Path End         : counter_9__i5/D  (SLICE_R8C13D)
+Path Begin       : counter_9__i5/Q  (SLICE_R8C29D)
+Path End         : counter_9__i5/D  (SLICE_R8C29D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1062,10 +1062,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i5/CK->counter_9__i5/Q         SLICE_R8C13D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+counter_9__i5/CK->counter_9__i5/Q         SLICE_R8C29D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 led_control/counter[5]                                       NET DELAY        0.882                  4.745  2       
 counter_9_add_4_7/C0->counter_9_add_4_7/S0
-                                          SLICE_R8C13D       C0_TO_F0_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C29D       C0_TO_F0_DELAY   0.252                  4.997  1       
 counter_15__N_1[5]                                           NET DELAY        0.000                  4.997  1       
 counter_9__i5/D                                              ENDPOINT         0.000                  4.997  1       
 
@@ -1090,8 +1090,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i6/Q  (SLICE_R8C13D)
-Path End         : counter_9__i6/D  (SLICE_R8C13D)
+Path Begin       : counter_9__i6/Q  (SLICE_R8C29D)
+Path End         : counter_9__i6/D  (SLICE_R8C29D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1112,10 +1112,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i6/CK->counter_9__i6/Q         SLICE_R8C13D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+counter_9__i6/CK->counter_9__i6/Q         SLICE_R8C29D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
 led_control/counter[6]                                       NET DELAY        0.882                  4.745  2       
 counter_9_add_4_7/C1->counter_9_add_4_7/S1
-                                          SLICE_R8C13D       C1_TO_F1_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C29D       C1_TO_F1_DELAY   0.252                  4.997  1       
 counter_15__N_1[6]                                           NET DELAY        0.000                  4.997  1       
 counter_9__i6/D                                              ENDPOINT         0.000                  4.997  1       
 
@@ -1140,8 +1140,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i7/Q  (SLICE_R8C14A)
-Path End         : counter_9__i7/D  (SLICE_R8C14A)
+Path Begin       : counter_9__i7/Q  (SLICE_R8C30A)
+Path End         : counter_9__i7/D  (SLICE_R8C30A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1162,10 +1162,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i7/CK->counter_9__i7/Q         SLICE_R8C14A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+counter_9__i7/CK->counter_9__i7/Q         SLICE_R8C30A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 led_control/counter[7]                                       NET DELAY        0.882                  4.745  2       
 counter_9_add_4_9/C0->counter_9_add_4_9/S0
-                                          SLICE_R8C14A       C0_TO_F0_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30A       C0_TO_F0_DELAY   0.252                  4.997  1       
 counter_15__N_1[7]                                           NET DELAY        0.000                  4.997  1       
 counter_9__i7/D                                              ENDPOINT         0.000                  4.997  1       
 
@@ -1190,8 +1190,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i8/Q  (SLICE_R8C14A)
-Path End         : counter_9__i8/D  (SLICE_R8C14A)
+Path Begin       : counter_9__i8/Q  (SLICE_R8C30A)
+Path End         : counter_9__i8/D  (SLICE_R8C30A)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1212,10 +1212,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i8/CK->counter_9__i8/Q         SLICE_R8C14A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+counter_9__i8/CK->counter_9__i8/Q         SLICE_R8C30A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
 led_control/counter[8]                                       NET DELAY        0.882                  4.745  2       
 counter_9_add_4_9/C1->counter_9_add_4_9/S1
-                                          SLICE_R8C14A       C1_TO_F1_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30A       C1_TO_F1_DELAY   0.252                  4.997  1       
 counter_15__N_1[8]                                           NET DELAY        0.000                  4.997  1       
 counter_9__i8/D                                              ENDPOINT         0.000                  4.997  1       
 
@@ -1240,8 +1240,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i9/Q  (SLICE_R8C14B)
-Path End         : counter_9__i9/D  (SLICE_R8C14B)
+Path Begin       : counter_9__i9/Q  (SLICE_R8C30B)
+Path End         : counter_9__i9/D  (SLICE_R8C30B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1262,10 +1262,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i9/CK->counter_9__i9/Q         SLICE_R8C14B       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+counter_9__i9/CK->counter_9__i9/Q         SLICE_R8C30B       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 led_control/counter[9]                                       NET DELAY        0.882                  4.745  2       
 counter_9_add_4_11/C0->counter_9_add_4_11/S0
-                                          SLICE_R8C14B       C0_TO_F0_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30B       C0_TO_F0_DELAY   0.252                  4.997  1       
 counter_15__N_1[9]                                           NET DELAY        0.000                  4.997  1       
 counter_9__i9/D                                              ENDPOINT         0.000                  4.997  1       
 
@@ -1290,8 +1290,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i10/Q  (SLICE_R8C14B)
-Path End         : counter_9__i10/D  (SLICE_R8C14B)
+Path Begin       : counter_9__i10/Q  (SLICE_R8C30B)
+Path End         : counter_9__i10/D  (SLICE_R8C30B)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1312,10 +1312,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i10/CK->counter_9__i10/Q       SLICE_R8C14B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+counter_9__i10/CK->counter_9__i10/Q       SLICE_R8C30B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
 led_control/counter[10]                                      NET DELAY        0.882                  4.745  2       
 counter_9_add_4_11/C1->counter_9_add_4_11/S1
-                                          SLICE_R8C14B       C1_TO_F1_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30B       C1_TO_F1_DELAY   0.252                  4.997  1       
 counter_15__N_1[10]                                          NET DELAY        0.000                  4.997  1       
 counter_9__i10/D                                             ENDPOINT         0.000                  4.997  1       
 
@@ -1340,8 +1340,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i11/Q  (SLICE_R8C14C)
-Path End         : counter_9__i11/D  (SLICE_R8C14C)
+Path Begin       : counter_9__i11/Q  (SLICE_R8C30C)
+Path End         : counter_9__i11/D  (SLICE_R8C30C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1362,10 +1362,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i11/CK->counter_9__i11/Q       SLICE_R8C14C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+counter_9__i11/CK->counter_9__i11/Q       SLICE_R8C30C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 led_control/counter[11]                                      NET DELAY        0.882                  4.745  2       
 counter_9_add_4_13/C0->counter_9_add_4_13/S0
-                                          SLICE_R8C14C       C0_TO_F0_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30C       C0_TO_F0_DELAY   0.252                  4.997  1       
 counter_15__N_1[11]                                          NET DELAY        0.000                  4.997  1       
 counter_9__i11/D                                             ENDPOINT         0.000                  4.997  1       
 
@@ -1390,8 +1390,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i12/Q  (SLICE_R8C14C)
-Path End         : counter_9__i12/D  (SLICE_R8C14C)
+Path Begin       : counter_9__i12/Q  (SLICE_R8C30C)
+Path End         : counter_9__i12/D  (SLICE_R8C30C)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1412,10 +1412,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i12/CK->counter_9__i12/Q       SLICE_R8C14C       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+counter_9__i12/CK->counter_9__i12/Q       SLICE_R8C30C       CLK_TO_Q1_DELAY  0.779                  3.863  2       
 led_control/counter[12]                                      NET DELAY        0.882                  4.745  2       
 counter_9_add_4_13/C1->counter_9_add_4_13/S1
-                                          SLICE_R8C14C       C1_TO_F1_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30C       C1_TO_F1_DELAY   0.252                  4.997  1       
 counter_15__N_1[12]                                          NET DELAY        0.000                  4.997  1       
 counter_9__i12/D                                             ENDPOINT         0.000                  4.997  1       
 
@@ -1440,8 +1440,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i13/Q  (SLICE_R8C14D)
-Path End         : counter_9__i13/D  (SLICE_R8C14D)
+Path Begin       : counter_9__i13/Q  (SLICE_R8C30D)
+Path End         : counter_9__i13/D  (SLICE_R8C30D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1462,10 +1462,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i13/CK->counter_9__i13/Q       SLICE_R8C14D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+counter_9__i13/CK->counter_9__i13/Q       SLICE_R8C30D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
 led_control/counter[13]                                      NET DELAY        0.882                  4.745  2       
 counter_9_add_4_15/C0->counter_9_add_4_15/S0
-                                          SLICE_R8C14D       C0_TO_F0_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30D       C0_TO_F0_DELAY   0.252                  4.997  1       
 counter_15__N_1[13]                                          NET DELAY        0.000                  4.997  1       
 counter_9__i13/D                                             ENDPOINT         0.000                  4.997  1       
 
@@ -1490,8 +1490,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i14/Q  (SLICE_R8C14D)
-Path End         : counter_9__i14/D  (SLICE_R8C14D)
+Path Begin       : counter_9__i14/Q  (SLICE_R8C30D)
+Path End         : counter_9__i14/D  (SLICE_R8C30D)
 Source Clock     : int_osc (R)
 Destination Clock: int_osc (R)
 Logic Level      : 2
@@ -1512,10 +1512,10 @@ int_osc                                                      NET DELAY        3.
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i14/CK->counter_9__i14/Q       SLICE_R8C14D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+counter_9__i14/CK->counter_9__i14/Q       SLICE_R8C30D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
 led_control/counter[14]                                      NET DELAY        0.882                  4.745  2       
 counter_9_add_4_15/C1->counter_9_add_4_15/S1
-                                          SLICE_R8C14D       C1_TO_F1_DELAY   0.252                  4.997  1       
+                                          SLICE_R8C30D       C1_TO_F1_DELAY   0.252                  4.997  1       
 counter_15__N_1[14]                                          NET DELAY        0.000                  4.997  1       
 counter_9__i14/D                                             ENDPOINT         0.000                  4.997  1       
 
