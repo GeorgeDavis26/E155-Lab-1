@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Sun Aug 31 15:23:06 2025
+Mapped on: Sun Aug 31 16:01:30 2025
 
 Design Information
 ------------------
@@ -20,11 +20,11 @@ Command line:   map -i lab1_gd_impl_1_syn.udb -o lab1_gd_impl_1_map.udb -mp
 Design Summary
 --------------
 
-   Number of slice registers:  16 out of  5280 (<1%)
+   Number of slice registers:  26 out of  5280 (<1%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:            34 out of  5280 (1%)
-      Number of logic LUT4s:              16
-      Number of ripple logic:              9 (18 LUT4s)
+   Number of LUT4s:            46 out of  5280 (1%)
+      Number of logic LUT4s:              20
+      Number of ripple logic:             13 (26 LUT4s)
    Number of IO sites used:   14 out of 39 (36%)
       Number of IO sites used for general PIO: 14
       Number of IO sites used for I3C: 0 out of 2 (0%)
@@ -47,19 +47,19 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  1
-      Net int_osc: 9 loads, 9 rising, 0 falling (Driver: Pin
-     hf_osc.osc_inst/CLKHF)
+      Net led_control.clk: 14 loads, 14 rising, 0 falling (Driver: Pin
+     led_control.hf_osc.osc_inst/CLKHF)
    Number of Clock Enables:  1
-      Net VCC_net: 1 loads, 0 SLICEs
-   Number of LSRs:  0
+      Net seg_pad[0].vcc: 1 loads, 0 SLICEs
+   Number of LSRs:  1
+      Net led_control.n107: 13 loads, 13 SLICEs
    Top 10 highest fanout non-clock nets:
+      Net led_control.n107: 14 loads
       Net s_c_0: 8 loads
       Net s_c_1: 8 loads
       Net s_c_2: 8 loads
       Net s_c_3: 8 loads
-      Net VCC_net: 3 loads
-      Net counter[11]: 2 loads
-      Net counter[13]: 2 loads
+      Net seg_pad[0].vcc: 3 loads
 
                                     Page 1
 
@@ -69,9 +69,10 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net counter[14]: 2 loads
-      Net counter[1]: 2 loads
-      Net counter[2]: 2 loads
+      Net led_control.counter[15]: 2 loads
+      Net led_control.counter[19]: 2 loads
+      Net led_control.counter[23]: 2 loads
+      Net led_control.counter[9]: 2 loads
 
 
 
@@ -125,10 +126,10 @@ IO (PIO) Attributes
 Removed logic
 -------------
 
-Block i1 was optimized away.
-
+Block s_pad[0].vlo_inst was optimized away.
 
                                     Page 2
+
 
 
 
@@ -138,16 +139,16 @@ OSC Summary
 -----------
 
 OSC 1:                                 Pin/Node Value
-  OSC Instance Name:                            hf_osc.osc_inst
-  Power UP:                            NODE     VCC_net
-  Enable Signal:                       NODE     VCC_net
-  OSC Output:                          NODE     int_osc
+  OSC Instance Name:                            led_control/hf_osc.osc_inst
+  Power UP:                            NODE     seg_pad[0].vcc
+  Enable Signal:                       NODE     seg_pad[0].vcc
+  OSC Output:                          NODE     led_control.clk
   DIV Setting:                                  00
 
 ASIC Components
 ---------------
 
-Instance Name: hf_osc.osc_inst
+Instance Name: led_control/hf_osc.osc_inst
          Type: HFOSC
 
 Constraint Summary
@@ -162,8 +163,7 @@ Run Time and Memory Usage
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 67 MB
-Checksum -- map: e4fc77a72f492a20d54882dfb8217189de59e49f
-
+Checksum -- map: a9fdce2cde8d343cc7ce73b23e1982bff8bfb1f8
 
 
 

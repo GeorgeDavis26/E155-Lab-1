@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Sun Aug 31 15:23:16 2025
+Sun Aug 31 16:01:40 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -48,11 +48,11 @@ Package Status:                     Preliminary    Version 1.5
 
 1.1  SDC Constraints
 =====================
-create_clock -name {int_osc} -period 20.8333 [get_pins {hf_osc.osc_inst/CLKHF }] 
+create_clock -name {led_control/clk} -period 20.8333 [get_pins {led_control/hf_osc.osc_inst/CLKHF }] 
 
 1.2  Constraint Coverage
 ---------------------------
-Constraint Coverage: 45.5224%
+Constraint Coverage: 73.7374%
 
 
 1.3  Overall Summary
@@ -126,17 +126,17 @@ None
 2.1  Clock Summary
 =======================
 
-2.1.1 Clock "int_osc"
+2.1.1 Clock "led_control/clk"
 =======================
-create_clock -name {int_osc} -period 20.8333 [get_pins {hf_osc.osc_inst/CLKHF }] 
+create_clock -name {led_control/clk} -period 20.8333 [get_pins {led_control/hf_osc.osc_inst/CLKHF }] 
 
 Single Clock Domain
 -------------------------------------------------------------------------------------------------------
-             Clock int_osc              |                    |       Period       |     Frequency      
+         Clock led_control/clk          |                    |       Period       |     Frequency      
 -------------------------------------------------------------------------------------------------------
- From int_osc                           |             Target |          20.833 ns |         48.000 MHz 
+ From led_control/clk                   |             Target |          20.833 ns |         48.000 MHz 
                                         | Actual (all paths) |          20.792 ns |         48.095 MHz 
-hf_osc.osc_inst/CLKHF (MPW)             |   (50% duty cycle) |          20.792 ns |         48.095 MHz 
+led_control/hf_osc.osc_inst/CLKHF (MPW) |   (50% duty cycle) |          20.792 ns |         48.095 MHz 
 -------------------------------------------------------------------------------------------------------
 
 Clock Domain Crossing
@@ -146,16 +146,26 @@ Clock Domain Crossing
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-counter_9__i15/D                         |   10.757 ns 
-counter_9__i14/D                         |   11.589 ns 
-counter_9__i13/D                         |   11.866 ns 
-counter_9__i12/D                         |   12.143 ns 
-counter_9__i11/D                         |   12.420 ns 
-counter_9__i10/D                         |   12.697 ns 
-counter_9__i9/D                          |   12.974 ns 
-counter_9__i8/D                          |   13.251 ns 
-counter_9__i7/D                          |   13.528 ns 
-counter_9__i6/D                          |   14.360 ns 
+{led_control/counter_7__i23/SR   led_control/counter_7__i24/SR}              
+                                         |    5.474 ns 
+{led_control/counter_7__i5/SR   led_control/counter_7__i6/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i7/SR   led_control/counter_7__i8/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i9/SR   led_control/counter_7__i10/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i11/SR   led_control/counter_7__i12/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i13/SR   led_control/counter_7__i14/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i15/SR   led_control/counter_7__i16/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i17/SR   led_control/counter_7__i18/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i19/SR   led_control/counter_7__i20/SR}              
+                                         |    6.664 ns 
+{led_control/counter_7__i21/SR   led_control/counter_7__i22/SR}              
+                                         |    6.664 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -178,815 +188,630 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i15/D  (SLICE_R8C31A)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 17
-Delay Ratio      : 38.4% (route), 61.6% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i23/SR   led_control/counter_7__i24/SR}  (SLICE_R8C10A)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 78.3% (route), 21.7% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 10.757 ns  (Passed)
+Path Slack       : 5.474 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.000                 12.023  2       
-counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n574                                                         NET DELAY               0.000                 12.300  2       
-counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n239                                                         NET DELAY               0.000                 12.577  2       
-counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n577                                                         NET DELAY               0.000                 12.854  2       
-counter_9_add_4_13/CI1->counter_9_add_4_13/CO1
-                                          SLICE_R8C30C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-n241                                                         NET DELAY               0.000                 13.131  2       
-counter_9_add_4_15/CI0->counter_9_add_4_15/CO0
-                                          SLICE_R8C30D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-n580                                                         NET DELAY               0.000                 13.408  2       
-counter_9_add_4_15/CI1->counter_9_add_4_15/CO1
-                                          SLICE_R8C30D       CIN1_TO_COUT1_DELAY     0.277                 13.685  2       
-n243                                                         NET DELAY               1.216                 14.901  2       
-counter_9_add_4_17/D0->counter_9_add_4_17/S0
-                                          SLICE_R8C31A       D0_TO_F0_DELAY          0.476                 15.377  1       
-counter_15__N_1[15]                                          NET DELAY               0.000                 15.377  1       
-counter_9__i15/D                                             ENDPOINT                0.000                 15.377  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           3.331                 20.329  14      
+{led_control/counter_7__i23/SR   led_control/counter_7__i24/SR}
+                                                             ENDPOINT            0.000                 20.329  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-counter_9__i15/CK                                            CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(15.376)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       10.757  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(20.328)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    5.474  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i14/D  (SLICE_R8C30D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 16
-Delay Ratio      : 35.8% (route), 64.2% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i5/SR   led_control/counter_7__i6/SR}  (SLICE_R8C7D)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 11.589 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.000                 12.023  2       
-counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n574                                                         NET DELAY               0.000                 12.300  2       
-counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n239                                                         NET DELAY               0.000                 12.577  2       
-counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n577                                                         NET DELAY               0.000                 12.854  2       
-counter_9_add_4_13/CI1->counter_9_add_4_13/CO1
-                                          SLICE_R8C30C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-n241                                                         NET DELAY               0.000                 13.131  2       
-counter_9_add_4_15/CI0->counter_9_add_4_15/CO0
-                                          SLICE_R8C30D       CIN0_TO_COUT0_DELAY     0.277                 13.408  2       
-n580                                                         NET DELAY               0.661                 14.069  2       
-counter_9_add_4_15/D1->counter_9_add_4_15/S1
-                                          SLICE_R8C30D       D1_TO_F1_DELAY          0.476                 14.545  1       
-counter_15__N_1[14]                                          NET DELAY               0.000                 14.545  1       
-counter_9__i14/D                                             ENDPOINT                0.000                 14.545  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i5/SR   led_control/counter_7__i6/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i13/CK   counter_9__i14/CK}                      CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(14.544)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       11.589  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i5/CK   led_control/counter_7__i6/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i13/D  (SLICE_R8C30D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 15
-Delay Ratio      : 36.9% (route), 63.1% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i7/SR   led_control/counter_7__i8/SR}  (SLICE_R8C8A)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 11.866 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.000                 12.023  2       
-counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n574                                                         NET DELAY               0.000                 12.300  2       
-counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n239                                                         NET DELAY               0.000                 12.577  2       
-counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n577                                                         NET DELAY               0.000                 12.854  2       
-counter_9_add_4_13/CI1->counter_9_add_4_13/CO1
-                                          SLICE_R8C30C       CIN1_TO_COUT1_DELAY     0.277                 13.131  2       
-n241                                                         NET DELAY               0.661                 13.792  2       
-counter_9_add_4_15/D0->counter_9_add_4_15/S0
-                                          SLICE_R8C30D       D0_TO_F0_DELAY          0.476                 14.268  1       
-counter_15__N_1[13]                                          NET DELAY               0.000                 14.268  1       
-counter_9__i13/D                                             ENDPOINT                0.000                 14.268  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i7/SR   led_control/counter_7__i8/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i13/CK   counter_9__i14/CK}                      CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(14.267)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       11.866  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i7/CK   led_control/counter_7__i8/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i12/D  (SLICE_R8C30C)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 14
-Delay Ratio      : 38.1% (route), 61.9% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i9/SR   led_control/counter_7__i10/SR}  (SLICE_R8C8B)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 12.143 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.000                 12.023  2       
-counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n574                                                         NET DELAY               0.000                 12.300  2       
-counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n239                                                         NET DELAY               0.000                 12.577  2       
-counter_9_add_4_13/CI0->counter_9_add_4_13/CO0
-                                          SLICE_R8C30C       CIN0_TO_COUT0_DELAY     0.277                 12.854  2       
-n577                                                         NET DELAY               0.661                 13.515  2       
-counter_9_add_4_13/D1->counter_9_add_4_13/S1
-                                          SLICE_R8C30C       D1_TO_F1_DELAY          0.476                 13.991  1       
-counter_15__N_1[12]                                          NET DELAY               0.000                 13.991  1       
-counter_9__i12/D                                             ENDPOINT                0.000                 13.991  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i9/SR   led_control/counter_7__i10/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i11/CK   counter_9__i12/CK}                      CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(13.990)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       12.143  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i9/CK   led_control/counter_7__i10/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i11/D  (SLICE_R8C30C)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 13
-Delay Ratio      : 39.4% (route), 60.6% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i11/SR   led_control/counter_7__i12/SR}  (SLICE_R8C8C)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 12.420 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.000                 12.023  2       
-counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n574                                                         NET DELAY               0.000                 12.300  2       
-counter_9_add_4_11/CI1->counter_9_add_4_11/CO1
-                                          SLICE_R8C30B       CIN1_TO_COUT1_DELAY     0.277                 12.577  2       
-n239                                                         NET DELAY               0.661                 13.238  2       
-counter_9_add_4_13/D0->counter_9_add_4_13/S0
-                                          SLICE_R8C30C       D0_TO_F0_DELAY          0.476                 13.714  1       
-counter_15__N_1[11]                                          NET DELAY               0.000                 13.714  1       
-counter_9__i11/D                                             ENDPOINT                0.000                 13.714  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i11/SR   led_control/counter_7__i12/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i11/CK   counter_9__i12/CK}                      CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(13.713)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       12.420  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i11/CK   led_control/counter_7__i12/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i10/D  (SLICE_R8C30B)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 12
-Delay Ratio      : 40.8% (route), 59.2% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i13/SR   led_control/counter_7__i14/SR}  (SLICE_R8C8D)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 12.697 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.000                 12.023  2       
-counter_9_add_4_11/CI0->counter_9_add_4_11/CO0
-                                          SLICE_R8C30B       CIN0_TO_COUT0_DELAY     0.277                 12.300  2       
-n574                                                         NET DELAY               0.661                 12.961  2       
-counter_9_add_4_11/D1->counter_9_add_4_11/S1
-                                          SLICE_R8C30B       D1_TO_F1_DELAY          0.476                 13.437  1       
-counter_15__N_1[10]                                          NET DELAY               0.000                 13.437  1       
-counter_9__i10/D                                             ENDPOINT                0.000                 13.437  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i13/SR   led_control/counter_7__i14/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i9/CK   counter_9__i10/CK}                       CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(13.436)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       12.697  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i13/CK   led_control/counter_7__i14/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i9/D  (SLICE_R8C30B)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 11
-Delay Ratio      : 42.3% (route), 57.7% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i15/SR   led_control/counter_7__i16/SR}  (SLICE_R8C9A)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 12.974 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.000                 11.746  2       
-counter_9_add_4_9/CI1->counter_9_add_4_9/CO1
-                                          SLICE_R8C30A       CIN1_TO_COUT1_DELAY     0.277                 12.023  2       
-n237                                                         NET DELAY               0.661                 12.684  2       
-counter_9_add_4_11/D0->counter_9_add_4_11/S0
-                                          SLICE_R8C30B       D0_TO_F0_DELAY          0.476                 13.160  1       
-counter_15__N_1[9]                                           NET DELAY               0.000                 13.160  1       
-counter_9__i9/D                                              ENDPOINT                0.000                 13.160  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i15/SR   led_control/counter_7__i16/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i9/CK   counter_9__i10/CK}                       CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(13.159)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       12.974  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i15/CK   led_control/counter_7__i16/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i8/D  (SLICE_R8C30A)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 10
-Delay Ratio      : 43.9% (route), 56.1% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i17/SR   led_control/counter_7__i18/SR}  (SLICE_R8C9B)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 13.251 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               0.555                 11.469  2       
-counter_9_add_4_9/CI0->counter_9_add_4_9/CO0
-                                          SLICE_R8C30A       CIN0_TO_COUT0_DELAY     0.277                 11.746  2       
-n571                                                         NET DELAY               0.661                 12.407  2       
-counter_9_add_4_9/D1->counter_9_add_4_9/S1
-                                          SLICE_R8C30A       D1_TO_F1_DELAY          0.476                 12.883  1       
-counter_15__N_1[8]                                           NET DELAY               0.000                 12.883  1       
-counter_9__i8/D                                              ENDPOINT                0.000                 12.883  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i17/SR   led_control/counter_7__i18/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i7/CK   counter_9__i8/CK}                        CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(12.882)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       13.251  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i17/CK   led_control/counter_7__i18/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i7/D  (SLICE_R8C30A)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 9
-Delay Ratio      : 45.6% (route), 54.4% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i19/SR   led_control/counter_7__i20/SR}  (SLICE_R8C9C)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 13.528 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.000                 10.637  2       
-counter_9_add_4_7/CI1->counter_9_add_4_7/CO1
-                                          SLICE_R8C29D       CIN1_TO_COUT1_DELAY     0.277                 10.914  2       
-n235                                                         NET DELAY               1.216                 12.130  2       
-counter_9_add_4_9/D0->counter_9_add_4_9/S0
-                                          SLICE_R8C30A       D0_TO_F0_DELAY          0.476                 12.606  1       
-counter_15__N_1[7]                                           NET DELAY               0.000                 12.606  1       
-counter_9__i7/D                                              ENDPOINT                0.000                 12.606  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i19/SR   led_control/counter_7__i20/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i7/CK   counter_9__i8/CK}                        CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(12.605)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       13.528  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i19/CK   led_control/counter_7__i20/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i0/Q  (SLICE_R8C29A)
-Path End         : counter_9__i6/D  (SLICE_R8C29D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
-Logic Level      : 8
-Delay Ratio      : 42.8% (route), 57.2% (logic)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : {led_control/counter_7__i21/SR   led_control/counter_7__i22/SR}  (SLICE_R8C9D)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
+Logic Level      : 5
+Delay Ratio      : 76.5% (route), 23.5% (logic)
 Clock Skew       : 0.000 ns 
 Setup Constraint : 20.833 ns 
-Path Slack       : 14.360 ns  (Passed)
+Path Slack       : 6.664 ns  (Passed)
 
 
 Source Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                  0.000  10      
-int_osc                                                      NET DELAY               5.499                  5.499  10      
-counter_9__i0/CK                                             CLOCK PIN               0.000                  5.499  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                  0.000  15      
+led_control/clk                                              NET DELAY           5.499                  5.499  15      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN           0.000                  5.499  1       
 
 
 Data Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-counter_9__i0/CK->counter_9__i0/Q         SLICE_R8C29A       CLK_TO_Q1_DELAY         1.388                  6.887  2       
-led_control/counter[0]                                       NET DELAY               2.022                  8.909  2       
-counter_9_add_4_1/C1->counter_9_add_4_1/CO1
-                                          SLICE_R8C29A       C1_TO_COUT1_DELAY       0.343                  9.252  2       
-n229                                                         NET DELAY               0.000                  9.252  2       
-counter_9_add_4_3/CI0->counter_9_add_4_3/CO0
-                                          SLICE_R8C29B       CIN0_TO_COUT0_DELAY     0.277                  9.529  2       
-n562                                                         NET DELAY               0.000                  9.529  2       
-counter_9_add_4_3/CI1->counter_9_add_4_3/CO1
-                                          SLICE_R8C29B       CIN1_TO_COUT1_DELAY     0.277                  9.806  2       
-n231                                                         NET DELAY               0.000                  9.806  2       
-counter_9_add_4_5/CI0->counter_9_add_4_5/CO0
-                                          SLICE_R8C29C       CIN0_TO_COUT0_DELAY     0.277                 10.083  2       
-n565                                                         NET DELAY               0.000                 10.083  2       
-counter_9_add_4_5/CI1->counter_9_add_4_5/CO1
-                                          SLICE_R8C29C       CIN1_TO_COUT1_DELAY     0.277                 10.360  2       
-n233                                                         NET DELAY               0.000                 10.360  2       
-counter_9_add_4_7/CI0->counter_9_add_4_7/CO0
-                                          SLICE_R8C29D       CIN0_TO_COUT0_DELAY     0.277                 10.637  2       
-n568                                                         NET DELAY               0.661                 11.298  2       
-counter_9_add_4_7/D1->counter_9_add_4_7/S1
-                                          SLICE_R8C29D       D1_TO_F1_DELAY          0.476                 11.774  1       
-counter_15__N_1[6]                                           NET DELAY               0.000                 11.774  1       
-counter_9__i6/D                                              ENDPOINT                0.000                 11.774  1       
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY     1.388                  6.887  2       
+led_control/counter[24]                                      NET DELAY           3.331                 10.218  2       
+led_control/i10_4_lut/D->led_control/i10_4_lut/Z
+                                          SLICE_R9C7B        A0_TO_F0_DELAY      0.449                 10.667  1       
+led_control/n27                                              NET DELAY           2.485                 13.152  1       
+led_control/i1_4_lut/A->led_control/i1_4_lut/Z
+                                          SLICE_R9C8B        B0_TO_F0_DELAY      0.476                 13.628  1       
+led_control/n10                                              NET DELAY           0.304                 13.932  1       
+led_control/i7_4_lut/D->led_control/i7_4_lut/Z
+                                          SLICE_R9C8B        C1_TO_F1_DELAY      0.449                 14.381  1       
+led_control/n16                                              NET DELAY           2.168                 16.549  1       
+led_control/i4_4_lut/D->led_control/i4_4_lut/Z
+                                          SLICE_R9C8C        D1_TO_F1_DELAY      0.449                 16.998  14      
+led_control/n107                                             NET DELAY           2.141                 19.139  14      
+{led_control/counter_7__i21/SR   led_control/counter_7__i22/SR}
+                                                             ENDPOINT            0.000                 19.139  1       
 
 
 Destination Clock Path
-Name                                      Cell/Site Name     Delay Name           Incr      Arrival/Required Time  Fanout  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-                                                             CONSTRAINT              0.000                 20.833  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY           0.000                 20.833  10      
-int_osc                                                      NET DELAY               5.499                 26.332  10      
-{counter_9__i5/CK   counter_9__i6/CK}                        CLOCK PIN               0.000                 26.332  1       
-                                                             Uncertainty          -(0.000)                 26.332  
-                                                             Setup time           -(0.198)                 26.134  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Required Time                                                                                              26.134  
-Arrival Time                                                                                            -(11.773)  
-----------------------------------------  -----------------  -------------------  --------  ---------------------  ------  
-Path Slack  (Passed)                                                                                       14.360  
+Name                                      Cell/Site Name     Delay Name       Incr      Arrival/Required Time  Fanout  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+                                                             CONSTRAINT          0.000                 20.833  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY       0.000                 20.833  15      
+led_control/clk                                              NET DELAY           5.499                 26.332  15      
+{led_control/counter_7__i21/CK   led_control/counter_7__i22/CK}
+                                                             CLOCK PIN           0.000                 26.332  1       
+                                                             Uncertainty      -(0.000)                 26.332  
+                                                             Setup time       -(0.529)                 25.803  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Required Time                                                                                          25.803  
+Arrival Time                                                                                        -(19.138)  
+----------------------------------------  -----------------  ---------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    6.664  
 
 
 
@@ -1008,16 +833,16 @@ Path Slack  (Passed)                                                            
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-counter_9__i5/D                          |    1.913 ns 
-counter_9__i6/D                          |    1.913 ns 
-counter_9__i7/D                          |    1.913 ns 
-counter_9__i8/D                          |    1.913 ns 
-counter_9__i9/D                          |    1.913 ns 
-counter_9__i10/D                         |    1.913 ns 
-counter_9__i11/D                         |    1.913 ns 
-counter_9__i12/D                         |    1.913 ns 
-counter_9__i13/D                         |    1.913 ns 
-counter_9__i14/D                         |    1.913 ns 
+led_control/led[2]/D                     |    1.743 ns 
+led_control/counter_7__i16/D             |    1.913 ns 
+led_control/counter_7__i17/D             |    1.913 ns 
+led_control/counter_7__i18/D             |    1.913 ns 
+led_control/counter_7__i19/D             |    1.913 ns 
+led_control/counter_7__i20/D             |    1.913 ns 
+led_control/counter_7__i21/D             |    1.913 ns 
+led_control/counter_7__i22/D             |    1.913 ns 
+led_control/counter_7__i23/D             |    1.913 ns 
+led_control/counter_7__i24/D             |    1.913 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -1040,60 +865,61 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
  ++++Path 1  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin       : counter_9__i5/Q  (SLICE_R8C29D)
-Path End         : counter_9__i5/D  (SLICE_R8C29D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/led[2]/Q  (SLICE_R9C8D)
+Path End         : led_control/led[2]/D  (SLICE_R9C8D)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
-Delay Ratio      : 46.1% (route), 53.9% (logic)
+Delay Ratio      : 40.8% (route), 59.2% (logic)
 Clock Skew       : 0.000 ns 
 Hold Constraint  : 0.000 ns 
-Path Slack       : 1.913 ns  (Passed)
+Path Slack       : 1.743 ns  (Passed)
 
 
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i5/CK   counter_9__i6/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+led_control/led[2]/CK                                        CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i5/CK->counter_9__i5/Q         SLICE_R8C29D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_control/counter[5]                                       NET DELAY        0.882                  4.745  2       
-counter_9_add_4_7/C0->counter_9_add_4_7/S0
-                                          SLICE_R8C29D       C0_TO_F0_DELAY   0.252                  4.997  1       
-counter_15__N_1[5]                                           NET DELAY        0.000                  4.997  1       
-counter_9__i5/D                                              ENDPOINT         0.000                  4.997  1       
+led_control/led[2]/CK->led_control/led[2]/Q
+                                          SLICE_R9C8D        CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_control/led_c_2                                          NET DELAY        0.712                  4.575  2       
+led_control/i1_2_lut/A->led_control/i1_2_lut/Z
+                                          SLICE_R9C8D        D0_TO_F0_DELAY   0.252                  4.827  1       
+led_control/n103                                             NET DELAY        0.000                  4.827  1       
+led_control/led[2]/D                                         ENDPOINT         0.000                  4.827  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i5/CK   counter_9__i6/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+led_control/led[2]/CK                                        CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
 Required Time                                                                                       -3.084  
-Arrival Time                                                                                         4.997  
+Arrival Time                                                                                         4.827  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-Path Slack  (Passed)                                                                                 1.913  
+Path Slack  (Passed)                                                                                 1.743  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i6/Q  (SLICE_R8C29D)
-Path End         : counter_9__i6/D  (SLICE_R8C29D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i16/Q  (SLICE_R8C9A)
+Path End         : led_control/counter_7__i16/D  (SLICE_R8C9A)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1104,29 +930,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i5/CK   counter_9__i6/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i15/CK   led_control/counter_7__i16/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i6/CK->counter_9__i6/Q         SLICE_R8C29D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_control/counter[6]                                       NET DELAY        0.882                  4.745  2       
-counter_9_add_4_7/C1->counter_9_add_4_7/S1
-                                          SLICE_R8C29D       C1_TO_F1_DELAY   0.252                  4.997  1       
-counter_15__N_1[6]                                           NET DELAY        0.000                  4.997  1       
-counter_9__i6/D                                              ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i16/CK->led_control/counter_7__i16/Q
+                                          SLICE_R8C9A        CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_control/counter[16]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_17/C1->led_control/counter_7_add_4_17/S1
+                                          SLICE_R8C9A        C1_TO_F1_DELAY   0.252                  4.997  1       
+led_control/n105[16]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i16/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i5/CK   counter_9__i6/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i15/CK   led_control/counter_7__i16/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1140,10 +969,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i7/Q  (SLICE_R8C30A)
-Path End         : counter_9__i7/D  (SLICE_R8C30A)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i17/Q  (SLICE_R8C9B)
+Path End         : led_control/counter_7__i17/D  (SLICE_R8C9B)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1154,29 +983,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i7/CK   counter_9__i8/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i17/CK   led_control/counter_7__i18/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i7/CK->counter_9__i7/Q         SLICE_R8C30A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_control/counter[7]                                       NET DELAY        0.882                  4.745  2       
-counter_9_add_4_9/C0->counter_9_add_4_9/S0
-                                          SLICE_R8C30A       C0_TO_F0_DELAY   0.252                  4.997  1       
-counter_15__N_1[7]                                           NET DELAY        0.000                  4.997  1       
-counter_9__i7/D                                              ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i17/CK->led_control/counter_7__i17/Q
+                                          SLICE_R8C9B        CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_control/counter[17]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_19/C0->led_control/counter_7_add_4_19/S0
+                                          SLICE_R8C9B        C0_TO_F0_DELAY   0.252                  4.997  1       
+led_control/n105[17]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i17/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i7/CK   counter_9__i8/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i17/CK   led_control/counter_7__i18/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1190,10 +1022,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i8/Q  (SLICE_R8C30A)
-Path End         : counter_9__i8/D  (SLICE_R8C30A)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i18/Q  (SLICE_R8C9B)
+Path End         : led_control/counter_7__i18/D  (SLICE_R8C9B)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1204,29 +1036,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i7/CK   counter_9__i8/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i17/CK   led_control/counter_7__i18/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i8/CK->counter_9__i8/Q         SLICE_R8C30A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_control/counter[8]                                       NET DELAY        0.882                  4.745  2       
-counter_9_add_4_9/C1->counter_9_add_4_9/S1
-                                          SLICE_R8C30A       C1_TO_F1_DELAY   0.252                  4.997  1       
-counter_15__N_1[8]                                           NET DELAY        0.000                  4.997  1       
-counter_9__i8/D                                              ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i18/CK->led_control/counter_7__i18/Q
+                                          SLICE_R8C9B        CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_control/counter[18]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_19/C1->led_control/counter_7_add_4_19/S1
+                                          SLICE_R8C9B        C1_TO_F1_DELAY   0.252                  4.997  1       
+led_control/n105[18]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i18/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i7/CK   counter_9__i8/CK}                        CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i17/CK   led_control/counter_7__i18/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1240,10 +1075,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i9/Q  (SLICE_R8C30B)
-Path End         : counter_9__i9/D  (SLICE_R8C30B)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i19/Q  (SLICE_R8C9C)
+Path End         : led_control/counter_7__i19/D  (SLICE_R8C9C)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1254,29 +1089,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i9/CK   counter_9__i10/CK}                       CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i19/CK   led_control/counter_7__i20/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i9/CK->counter_9__i9/Q         SLICE_R8C30B       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_control/counter[9]                                       NET DELAY        0.882                  4.745  2       
-counter_9_add_4_11/C0->counter_9_add_4_11/S0
-                                          SLICE_R8C30B       C0_TO_F0_DELAY   0.252                  4.997  1       
-counter_15__N_1[9]                                           NET DELAY        0.000                  4.997  1       
-counter_9__i9/D                                              ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i19/CK->led_control/counter_7__i19/Q
+                                          SLICE_R8C9C        CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_control/counter[19]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_21/C0->led_control/counter_7_add_4_21/S0
+                                          SLICE_R8C9C        C0_TO_F0_DELAY   0.252                  4.997  1       
+led_control/n105[19]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i19/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i9/CK   counter_9__i10/CK}                       CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i19/CK   led_control/counter_7__i20/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1290,10 +1128,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i10/Q  (SLICE_R8C30B)
-Path End         : counter_9__i10/D  (SLICE_R8C30B)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i20/Q  (SLICE_R8C9C)
+Path End         : led_control/counter_7__i20/D  (SLICE_R8C9C)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1304,29 +1142,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i9/CK   counter_9__i10/CK}                       CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i19/CK   led_control/counter_7__i20/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i10/CK->counter_9__i10/Q       SLICE_R8C30B       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_control/counter[10]                                      NET DELAY        0.882                  4.745  2       
-counter_9_add_4_11/C1->counter_9_add_4_11/S1
-                                          SLICE_R8C30B       C1_TO_F1_DELAY   0.252                  4.997  1       
-counter_15__N_1[10]                                          NET DELAY        0.000                  4.997  1       
-counter_9__i10/D                                             ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i20/CK->led_control/counter_7__i20/Q
+                                          SLICE_R8C9C        CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_control/counter[20]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_21/C1->led_control/counter_7_add_4_21/S1
+                                          SLICE_R8C9C        C1_TO_F1_DELAY   0.252                  4.997  1       
+led_control/n105[20]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i20/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i9/CK   counter_9__i10/CK}                       CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i19/CK   led_control/counter_7__i20/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1340,10 +1181,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i11/Q  (SLICE_R8C30C)
-Path End         : counter_9__i11/D  (SLICE_R8C30C)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i21/Q  (SLICE_R8C9D)
+Path End         : led_control/counter_7__i21/D  (SLICE_R8C9D)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1354,29 +1195,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i11/CK   counter_9__i12/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i21/CK   led_control/counter_7__i22/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i11/CK->counter_9__i11/Q       SLICE_R8C30C       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_control/counter[11]                                      NET DELAY        0.882                  4.745  2       
-counter_9_add_4_13/C0->counter_9_add_4_13/S0
-                                          SLICE_R8C30C       C0_TO_F0_DELAY   0.252                  4.997  1       
-counter_15__N_1[11]                                          NET DELAY        0.000                  4.997  1       
-counter_9__i11/D                                             ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i21/CK->led_control/counter_7__i21/Q
+                                          SLICE_R8C9D        CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_control/counter[21]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_23/C0->led_control/counter_7_add_4_23/S0
+                                          SLICE_R8C9D        C0_TO_F0_DELAY   0.252                  4.997  1       
+led_control/n105[21]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i21/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i11/CK   counter_9__i12/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i21/CK   led_control/counter_7__i22/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1390,10 +1234,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i12/Q  (SLICE_R8C30C)
-Path End         : counter_9__i12/D  (SLICE_R8C30C)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i22/Q  (SLICE_R8C9D)
+Path End         : led_control/counter_7__i22/D  (SLICE_R8C9D)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1404,29 +1248,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i11/CK   counter_9__i12/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i21/CK   led_control/counter_7__i22/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i12/CK->counter_9__i12/Q       SLICE_R8C30C       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_control/counter[12]                                      NET DELAY        0.882                  4.745  2       
-counter_9_add_4_13/C1->counter_9_add_4_13/S1
-                                          SLICE_R8C30C       C1_TO_F1_DELAY   0.252                  4.997  1       
-counter_15__N_1[12]                                          NET DELAY        0.000                  4.997  1       
-counter_9__i12/D                                             ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i22/CK->led_control/counter_7__i22/Q
+                                          SLICE_R8C9D        CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_control/counter[22]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_23/C1->led_control/counter_7_add_4_23/S1
+                                          SLICE_R8C9D        C1_TO_F1_DELAY   0.252                  4.997  1       
+led_control/n105[22]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i22/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i11/CK   counter_9__i12/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i21/CK   led_control/counter_7__i22/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1440,10 +1287,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i13/Q  (SLICE_R8C30D)
-Path End         : counter_9__i13/D  (SLICE_R8C30D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i23/Q  (SLICE_R8C10A)
+Path End         : led_control/counter_7__i23/D  (SLICE_R8C10A)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1454,29 +1301,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i13/CK   counter_9__i14/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i13/CK->counter_9__i13/Q       SLICE_R8C30D       CLK_TO_Q0_DELAY  0.779                  3.863  2       
-led_control/counter[13]                                      NET DELAY        0.882                  4.745  2       
-counter_9_add_4_15/C0->counter_9_add_4_15/S0
-                                          SLICE_R8C30D       C0_TO_F0_DELAY   0.252                  4.997  1       
-counter_15__N_1[13]                                          NET DELAY        0.000                  4.997  1       
-counter_9__i13/D                                             ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i23/CK->led_control/counter_7__i23/Q
+                                          SLICE_R8C10A       CLK_TO_Q0_DELAY  0.779                  3.863  2       
+led_control/counter[23]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_25/C0->led_control/counter_7_add_4_25/S0
+                                          SLICE_R8C10A       C0_TO_F0_DELAY   0.252                  4.997  1       
+led_control/n105[23]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i23/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i13/CK   counter_9__i14/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
@@ -1490,10 +1340,10 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : counter_9__i14/Q  (SLICE_R8C30D)
-Path End         : counter_9__i14/D  (SLICE_R8C30D)
-Source Clock     : int_osc (R)
-Destination Clock: int_osc (R)
+Path Begin       : led_control/counter_7__i24/Q  (SLICE_R8C10A)
+Path End         : led_control/counter_7__i24/D  (SLICE_R8C10A)
+Source Clock     : led_control/clk (R)
+Destination Clock: led_control/clk (R)
 Logic Level      : 2
 Delay Ratio      : 46.1% (route), 53.9% (logic)
 Clock Skew       : 0.000 ns 
@@ -1504,29 +1354,32 @@ Path Slack       : 1.913 ns  (Passed)
 Source Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i13/CK   counter_9__i14/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
 
 
 Data Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
-counter_9__i14/CK->counter_9__i14/Q       SLICE_R8C30D       CLK_TO_Q1_DELAY  0.779                  3.863  2       
-led_control/counter[14]                                      NET DELAY        0.882                  4.745  2       
-counter_9_add_4_15/C1->counter_9_add_4_15/S1
-                                          SLICE_R8C30D       C1_TO_F1_DELAY   0.252                  4.997  1       
-counter_15__N_1[14]                                          NET DELAY        0.000                  4.997  1       
-counter_9__i14/D                                             ENDPOINT         0.000                  4.997  1       
+led_control/counter_7__i24/CK->led_control/counter_7__i24/Q
+                                          SLICE_R8C10A       CLK_TO_Q1_DELAY  0.779                  3.863  2       
+led_control/counter[24]                                      NET DELAY        0.882                  4.745  2       
+led_control/counter_7_add_4_25/C1->led_control/counter_7_add_4_25/S1
+                                          SLICE_R8C10A       C1_TO_F1_DELAY   0.252                  4.997  1       
+led_control/n105[24]                                         NET DELAY        0.000                  4.997  1       
+led_control/counter_7__i24/D                                 ENDPOINT         0.000                  4.997  1       
 
 
 Destination Clock Path
 Name                                      Cell/Site Name     Delay Name       Incr   Arrival/Required Time  Fanout  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
                                                              CONSTRAINT       0.000                  0.000  1       
-hf_osc.osc_inst/CLKHF                     HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  11      
-int_osc                                                      NET DELAY        3.084                  3.084  11      
-{counter_9__i13/CK   counter_9__i14/CK}                      CLOCK PIN        0.000                  3.084  1       
+led_control.hf_osc.osc_inst/CLKHF         HFOSC_HFOSC_R1C32  CLOCK LATENCY    0.000                  0.000  16      
+led_control/clk                                              NET DELAY        3.084                  3.084  16      
+{led_control/counter_7__i23/CK   led_control/counter_7__i24/CK}
+                                                             CLOCK PIN        0.000                  3.084  1       
                                                              Uncertainty      0.000                  3.084  
                                                              Hold time        0.000                  3.084  
 ----------------------------------------  -----------------  ---------------  -----  ---------------------  ------  
