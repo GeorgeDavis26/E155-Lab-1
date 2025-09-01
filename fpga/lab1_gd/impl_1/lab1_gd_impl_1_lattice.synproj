@@ -45,6 +45,9 @@
 -sver "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv"
 "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv"
 "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv"
+"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv"
+"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv"
+"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv"
 
 
 -path "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd"
