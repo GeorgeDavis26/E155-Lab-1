@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2024.2.0.3.0
 
-Sun Aug 31 16:01:40 2025
+Sun Aug 31 20:49:09 2025
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -8,7 +8,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
 
-Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt lab1_gd_impl_1.twr lab1_gd_impl_1.udb -gui -msgset C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/promote.xml
+Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp High-Performance_1.2V -hsp m -pwrprd -html -rpt lab1_gd_impl_1.twr lab1_gd_impl_1.udb -gui -msgset C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/promote.xml
 
 -----------------------------------------
 Design:          top

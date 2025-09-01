@@ -8,14 +8,14 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Sun Aug 31 16:01:30 2025
+Mapped on: Sun Aug 31 20:48:55 2025
 
 Design Information
 ------------------
 
 Command line:   map -i lab1_gd_impl_1_syn.udb -o lab1_gd_impl_1_map.udb -mp
      lab1_gd_impl_1.mrp -hierrpt -gui -msgset
-     C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/promote.xml
+     C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/promote.xml
 
 Design Summary
 --------------
@@ -162,7 +162,7 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 67 MB
+   Peak Memory Usage: 65 MB
 Checksum -- map: a9fdce2cde8d343cc7ce73b23e1982bff8bfb1f8
 
 

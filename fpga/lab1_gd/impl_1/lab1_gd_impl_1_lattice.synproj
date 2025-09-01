@@ -39,18 +39,16 @@
 -use_io_insertion 1
 
 -resolve_mixed_drivers 0
--path "C:/lscc/radiant/2024.2/ispfpga/ice40tp/data" "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/impl_1" "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd"
+-path "C:/lscc/radiant/2024.2/ispfpga/ice40tp/data" "C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/impl_1" "C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd"
 -ver "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v"
 -lib pmi -vhd "C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.vhd"
--sver "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv"
-"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv"
-"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv"
-"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv"
-"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv"
-"C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv"
+-sver "C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/source/impl_1/led_control.sv"
+"C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv"
+"C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv"
 
 
--path "C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd"
+-path "C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd"
+-top top
 -udb "lab1_gd_impl_1_rtl.udb"
 -output_hdl "lab1_gd_impl_1.vm"
 
