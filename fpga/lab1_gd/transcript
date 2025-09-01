@@ -14,56 +14,64 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # Loading project lab1_gd
-# Load canceled
 # Compile of lab1_gd.sv was successful.
 # Compile of led_control.sv was successful.
 # Compile of seven_seg_disp.sv was successful.
 # 3 compiles, 0 failed with no errors.
 vsim -gui work.top
 # vsim -gui work.top 
-# Start time: 20:52:55 on Aug 31,2025
+# Start time: 11:55:15 on Sep 01,2025
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Error: C:/Users/gdavis/Desktop/e155-lab-1/fpga/lab1_gd/source/impl_1/led_control.sv(22): Module 'HSOSC' is not defined.
+# ** Error: C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv(22): Module 'HSOSC' is not defined.
 #  For instance 'hf_osc' at path 'top.led_control'
 # Optimization failed
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
 # Error loading design
-# End time: 20:52:56 on Aug 31,2025, Elapsed time: 0:00:01
+# End time: 11:55:15 on Sep 01,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 5
 vsim -gui work.top -L iCE40UP
 # vsim -gui work.top -L iCE40UP 
-# Start time: 20:55:07 on Aug 31,2025
+# Start time: 11:55:37 on Sep 01,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
 # Loading work.top(fast)
 # Loading iCE40UP.HSOSC(fast)
+# Load canceled
 force s 0000
-run 100
 run 100
 force s 0000
 run 100
 add wave -position end  sim:/top/s
 add wave -position end  sim:/top/led
 add wave -position end  sim:/top/seg
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: HCJZ0R3  ProcessID: 35356
+#           Attempting to use alternate WLF file "./wlft3v059i".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3v059i
 force s 0000
 run 100
-run 50000
 force s 1000
 run 100
-force s 0001
-run 100
-reset
-# Invalid parameter(s)
-# RESET { SESSION }
-r
-# ambiguous command name "r": radiobutton radix raise random_image range rankfile_image read readEvcdFile read_vlog_optionfile readers readmapfile really_quit really_restart record_sc_all_option record_sc_other_option regexp region_image registry regsub remove_cr rename resetGlobalEvcd resetTime resolveBusMember restart restartCmd restartDone restartError restartParse restore results_image resultsdir_image resultsdirne_image resultsfile_image resume return right rincr rmdb rmdb_image rmlmap run runIntHandler runStatus
-clear
-# invalid command name "clear"
 # Causality operation skipped due to absence of debug database file
-reset -f
-# Invalid parameter(s)
-# RESET { SESSION }
-restart -f
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading work.top(fast)
-# Loading iCE40UP.HSOSC(fast)
+force s 0100
+run 100
+force s 1111
+run 100
+force s 1111
+run 1000
+force s 4'b1111
+run 100
+force s 4'b1010
+run 100
+force s 1000
+run 100
+force s 4'b1111
+run 100
+run 100000
+# Compile of lab1_gd.sv was successful.
+# Compile of led_control.sv was successful.
+# Compile of seven_seg_disp.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# End time: 13:05:52 on Sep 01,2025, Elapsed time: 1:10:15
+# Errors: 0, Warnings: 4

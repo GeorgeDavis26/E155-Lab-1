@@ -10,7 +10,7 @@ module seven_seg_disp (
     logic	[6:0]	seg_state;
 	always_comb begin
 		case(s)
-			4'b0000:    seg_state = 7'b10000000; //Display Hex 0    
+			4'b0000:    seg_state = 7'b1000000; //Display Hex 0    
 			4'b0001:    seg_state = 7'b1111001; //Display Hex 1
 			4'b0010:    seg_state = 7'b0101100; //Display Hex 2 
 			4'b0011:    seg_state = 7'b0110000; //Display Hex 3 
