@@ -9,7 +9,6 @@ module top(
 	output	logic [6:0] seg
 	);
 	
-
 	led_control		led_control(s, led);
 	seven_seg_disp	seven_seg_disp(s, seg);
 

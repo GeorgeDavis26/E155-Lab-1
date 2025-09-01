@@ -15,6 +15,13 @@ SUB MODULES
                      seven_seg_disp         1
                               TOTAL        75
 ----------------------------------------------------------------------
+Report for cell seven_seg_disp.v1
+Instance Path : seven_seg_disp
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         7           36.8
+                              TOTAL         7
+----------------------------------------------------------------------
 Report for cell led_control.v1
 Instance Path : led_control
                                   Cell usage:
@@ -24,10 +31,3 @@ Instance Path : led_control
                               HSOSC         1          100.0
                                LUT4        12           63.2
                               TOTAL        52
-----------------------------------------------------------------------
-Report for cell seven_seg_disp.v1
-Instance Path : seven_seg_disp
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                               LUT4         7           36.8
-                              TOTAL         7

@@ -1,8 +1,10 @@
 m255
 K4
 z2
-!s12c _opt1
+!s12c _opt2
 Z0 !s99 nomlopt
+!s12c _opt1
+R0
 !s12c _opt
 R0
 !s11f vlog 2024.2 2024.05, May 20 2024
@@ -43,6 +45,20 @@ R8
 n@_opt1
 R9
 R1
+T_opt2
+!s110 1756761102
+VHHV7aRS@Z4;GbU89gjnLR1
+R2
+=1-00be43eaec8a-68b60c0e-116-25d8
+R0
+R3
+R4
+R5
+R6
+o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
+R8
+n@_opt2
+R9
 vled_control
 2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv
 Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92

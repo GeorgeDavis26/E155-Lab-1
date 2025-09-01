@@ -10,7 +10,7 @@
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="source/impl_1/lab1_gd.sv" type="Verilog" type_short="Verilog">
-            <Options VerilogStandard="System Verilog"/>
+            <Options VerilogStandard="System Verilog" top_module="top"/>
         </Source>
         <Source name="lab1_gd_pins.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>

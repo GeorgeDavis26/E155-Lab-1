@@ -13,65 +13,40 @@
 # // of the Customer's facilities without the express written permission of SISW,
 # // and may not be used in any way not expressly authorized by SISW.
 # //
-# Loading project lab1_gd
-# Compile of lab1_gd.sv was successful.
-# Compile of led_control.sv was successful.
-# Compile of seven_seg_disp.sv was successful.
-# 3 compiles, 0 failed with no errors.
-vsim -gui work.top
-# vsim -gui work.top 
-# Start time: 11:55:15 on Sep 01,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error: C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv(22): Module 'HSOSC' is not defined.
-#  For instance 'hf_osc' at path 'top.led_control'
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+vsim -gui work._opt -L iCE40UP
+# vsim -gui work._opt -L iCE40UP 
+# Start time: 14:11:15 on Sep 01,2025
 # Error loading design
-# End time: 11:55:15 on Sep 01,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 5
-vsim -gui work.top -L iCE40UP
-# vsim -gui work.top -L iCE40UP 
-# Start time: 11:55:37 on Sep 01,2025
+# End time: 14:11:15 on Sep 01,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -L iCE40UP work.top -voptargs=+acc
+# vsim -gui -L iCE40UP work.top -voptargs="+acc" 
+# Start time: 14:11:42 on Sep 01,2025
 # ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.top(fast)
+# Loading work.led_control(fast)
 # Loading iCE40UP.HSOSC(fast)
-# Load canceled
-force s 0000
-run 100
-force s 0000
-run 100
+# Loading work.seven_seg_disp(fast)
 add wave -position end  sim:/top/s
 add wave -position end  sim:/top/led
 add wave -position end  sim:/top/seg
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gdavis  Hostname: HCJZ0R3  ProcessID: 35356
-#           Attempting to use alternate WLF file "./wlft3v059i".
+#           Attempting to use alternate WLF file "./wlft05nt71".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft3v059i
-force s 0000
+#           Using alternate file: ./wlft05nt71
+force s 1111
 run 100
-force s 1000
-run 100
+add wave -position end  sim:/top/s
+add wave -position end  sim:/top/led
+add wave -position end  sim:/top/seg
 # Causality operation skipped due to absence of debug database file
-force s 0100
-run 100
-force s 1111
-run 100
-force s 1111
-run 1000
 force s 4'b1111
 run 100
-force s 4'b1010
+force s 4'b0000
 run 100
-force s 1000
-run 100
-force s 4'b1111
-run 100
-run 100000
-# Compile of lab1_gd.sv was successful.
-# Compile of led_control.sv was successful.
-# Compile of seven_seg_disp.sv was successful.
-# 3 compiles, 0 failed with no errors.
-# End time: 13:05:52 on Sep 01,2025, Elapsed time: 1:10:15
-# Errors: 0, Warnings: 4
+# End time: 16:46:08 on Sep 01,2025, Elapsed time: 2:34:26
+# Errors: 0, Warnings: 3

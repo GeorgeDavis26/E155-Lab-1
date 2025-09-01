@@ -12,7 +12,7 @@ module seven_seg_disp (
 		case(s)
 			4'b0000:    seg_state = 7'b1000000; //Display Hex 0    
 			4'b0001:    seg_state = 7'b1111001; //Display Hex 1
-			4'b0010:    seg_state = 7'b0101100; //Display Hex 2 
+			4'b0010:    seg_state = 7'b0100100; //Display Hex 2 
 			4'b0011:    seg_state = 7'b0110000; //Display Hex 3 
 			4'b0100:    seg_state = 7'b0011001; //Display Hex 4 
 			4'b0101:    seg_state = 7'b0010010; //Display Hex 5 
