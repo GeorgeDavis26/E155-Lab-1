@@ -17,7 +17,7 @@ module led_control(
 	//logic to control led[2]	
 	logic	clk;
 	logic	[24:0]	counter = 0;
-		
+		 
 	//Internal 48MHz high-speed oscillator
 	HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));
 	

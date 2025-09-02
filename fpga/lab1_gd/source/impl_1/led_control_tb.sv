@@ -13,11 +13,11 @@ module led_control_tb;
 	
 	//input/output variables
 	logic	[3:0] s;
-	logic   [2:0] led;
+	logic   [2:0] led, led_expected;
 
 	//32 bit vectornum indicates the number of test vectors applied
 	//32 bit errors indicates number of errros found
-	logic [31:0] vectornum errors;
+	logic [31:0] vectornum, errors;
 	
 	logic [6:0]	testvectors[10000:0];
 	
@@ -33,7 +33,7 @@ module led_control_tb;
 	
 	initial
 		begin
-			readmemb("led_control_tb.tv", testvectors);
+			$readmemb("led_control_tb.tv", testvectors);
 			
 			//Initialize 0 vectors tested and errors
 			vectornum = 0;

@@ -30,21 +30,6 @@ Z8 tCvgOpt 0
 n@_opt
 Z9 OL;O;2024.2;79
 R1
-T_opt1
-!s110 1756752938
-V=m7hEA?5QLOzg68hdCBd91
-R2
-=1-00be43e56f6a-68b5ec2a-c-40e4
-R0
-R3
-R4
-R5
-R6
-R7
-R8
-n@_opt1
-R9
-R1
 T_opt2
 !s110 1756761102
 VHHV7aRS@Z4;GbU89gjnLR1
@@ -59,6 +44,7 @@ o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
 R8
 n@_opt2
 R9
+R1
 vled_control
 2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv
 Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92

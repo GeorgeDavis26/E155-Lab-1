@@ -1,1 +1,0 @@
-C:/lscc/radiant/2024.2/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.top -quiet -auto_acc_if_foreign -work work -L iCE40UP -allow_unnamed -o _opt1 -id 1-00be43e56f6a-68b5ec2a-c-40e4 +__design_bin_path+C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd

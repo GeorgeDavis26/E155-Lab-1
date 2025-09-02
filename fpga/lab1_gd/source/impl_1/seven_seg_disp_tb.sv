@@ -13,17 +13,17 @@ module seven_seg_disp_tb;
 	
 	//input/output variables
 	logic	[3:0] s;  
-	logic   [6:0] seg;
+	logic   [6:0] seg, seg_expected;
 
 
 	//32 bit vectornum indicates the number of test vectors applied
 	//32 bit errors indicates number of errros found
-	logic [31:0] vectornum errors;
+	logic [31:0] vectornum, errors;
 	
 	logic [10:0]	testvectors[10000:0]; 
 	
 	//instatiate device to be tested
-	seven_seg_disp dut(in, out);
+	seven_seg_disp dut(s, seg);
 
     //generates clock 
 	always
@@ -34,7 +34,7 @@ module seven_seg_disp_tb;
 	
 	initial
 		begin
-			readmemb("seven_seg_disp.tv", testvectors); 
+			$readmemb("seven_seg_disp.tv", testvectors); 
 			
 			//Initialize 0 vectors tested and errors
 			vectornum = 0;

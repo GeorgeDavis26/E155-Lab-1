@@ -13,12 +13,12 @@ module lab1_gd_tb;
 	
 	//input variables
 	logic	[3:0] s;
-	logic	[2:0] led;
-	logic	[6:0] seg;
+	logic	[2:0] led, led_expected;
+	logic	[6:0] seg, seg_expected;
 	
 	//32 bit vectornum indicates the number of test vectors applied
 	//32 bit errors indicates number of errros found
-	logic [31:0] vectornum errors;
+	logic [31:0] vectornum, errors;
 	
 	//14 bit testvectors covering 4 input switches and 10 outputs between the LED's and the seven seg disp
 	logic [13:0]	testvectors[10000:0];
@@ -34,7 +34,7 @@ module lab1_gd_tb;
 	
 	initial
 		begin
-			readmemb("lab1_gd_tb.tv", testvectors);
+			$readmemb("lab1_gd_tb.tv", testvectors);
 			
 			//Initialize 0 vectors tested and errors
 			vectornum = 0;
