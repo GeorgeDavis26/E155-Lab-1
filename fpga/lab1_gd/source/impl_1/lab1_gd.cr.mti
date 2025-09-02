@@ -1,0 +1,15 @@
+C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_disp
+
+Top level modules:
+	seven_seg_disp
+
+} {} {}} C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_disp_tb
+
+Top level modules:
+	seven_seg_disp_tb
+
+} {} {}}
