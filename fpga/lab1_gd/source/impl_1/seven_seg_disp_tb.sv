@@ -5,6 +5,7 @@
 
 //Referenced E85 Lab_2 testbench provided tutorial by david harris to make this file
 
+	`timescale 1ps/1ps //timescale <time_unit>/<time_precision>
 
 module seven_seg_disp_tb;
 	
@@ -34,7 +35,7 @@ module seven_seg_disp_tb;
 	
 	initial
 		begin
-			$readmemb("seven_seg_disp.tv", testvectors); 
+			$readmemb("seven_seg_disp_tb.tv", testvectors); 
 			
 			//Initialize 0 vectors tested and errors
 			vectornum = 0;

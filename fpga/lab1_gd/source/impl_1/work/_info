@@ -1,8 +1,20 @@
 m255
 K4
 z2
-!s12c _opt
-Z0 !s99 nomlopt
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+!s12c _opt2
+R1
+Z2 !s12c _opt1
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R0
+R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
 !s112 1.1
@@ -10,68 +22,200 @@ Z0 !s99 nomlopt
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd
+Z3 dC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd
 T_opt
-!s110 1756790805
-VLW[kcUd=557kY6Pi5nKLF3
-04 17 4 work seven_seg_disp_tb fast 0
-=1-00be43eaeb5f-68b68015-20f-5e18
-R0
-!s12f OEM25U2 
-!s12b OEM100
-!s124 OEM100
-!s135 nogc
-o-quiet -auto_acc_if_foreign -work work
-Z1 tCvgOpt 0
+!s110 1756829518
+V?4`W65HhdcDXB;8mJTYX61
+Z4 04 17 4 work seven_seg_disp_tb fast 0
+=1-00be43eaec8a-68b7174e-2ce-1564
+R1
+Z5 !s12f OEM25U2 
+Z6 !s12b OEM100
+Z7 !s124 OEM100
+Z8 !s135 nogc
+Z9 o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
+Z10 tCvgOpt 0
 n@_opt
-OL;O;2024.2;79
+Z11 OL;O;2024.2;79
+T_opt1
+!s110 1756827224
+VCa<DH6EmGD=kY1=aN[lA02
+04 10 4 work lab1_gd_tb fast 0
+Z12 04 14 4 work led_control_tb fast 0
+R4
+=2-00be43eaec8a-68b70e58-75-4fa4
+R1
+!s12f OEM25U7 
+R6
+R7
+R8
+R9
+R10
+n@_opt1
+R11
+R3
+T_opt2
+!s110 1756829307
+VVC9[140SJne[6`@`8goU53
+R12
+=1-00be43eaec8a-68b7167a-3c5-4f9c
+R1
+R5
+R6
+R7
+R8
+R9
+R10
+n@_opt2
+R11
+R3
+vlab1_gd_tb
+2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv
+Z13 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z14 !s110 1756827910
+!i10b 1
+!s100 HLaeIj28AMZ>D=GVg>LoR3
+I@@@YHbST`7B5SZn28[emT0
+S1
+Z15 dC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1
+Z16 w1756827188
+8C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv
+FC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv
+!i122 64
+L0 10 68
+Z17 VDg1SIo80bB@j0V0VzS_@n1
+Z18 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z19 !s108 1756827910.000000
+!s107 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd_tb.sv|
+!i113 0
+Z20 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
+vled_control
+2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv
+R13
+R14
+!i10b 1
+!s100 9L`f?3l8kZC_20fbQOcN@3
+I8>]S[27Z5PaVGnDiZl7ae0
+S1
+R15
+Z21 w1756822577
+8C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv
+FC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv
+!i122 65
+L0 6 32
+R17
+R18
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv|
+!i113 0
+R20
+R10
+vled_control_tb
+2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv
+R13
+R14
+!i10b 1
+!s100 ?l8PV334Kgf0daa^5`dWU1
+IYglzPG:fCO^DO;Y35XjXK0
+S1
+R15
+R16
+8C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv
+FC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv
+!i122 66
+L0 10 65
+R17
+R18
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control_tb.sv|
+!i113 0
+R20
+R10
 vseven_seg_disp
 2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv
-Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1756790769
+R13
+R14
 !i10b 1
 !s100 I8IE;mUm3>7>LbRldARRb1
 I[iPo9eSh]Ba7cZmEzCQ9:2
 S1
-Z4 dC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1
-w1756783978
+R15
+R21
 8C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv
 FC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv
-!i122 1
+!i122 67
 L0 6 29
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 OL;L;2024.2;79
+R17
+R18
 r1
 !s85 0
 31
-Z7 !s108 1756790769.000000
+R19
 !s107 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv|
 !i113 0
-Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+R20
+R10
 vseven_seg_disp_tb
 2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv
-R2
-R3
+R13
+R14
 !i10b 1
-!s100 XbRL_cN5NEZ_[K1On[KBn3
-IazXK]Ml^ZXEfhoNbb2c163
+!s100 Kb^0HcCUa5jJ83U_6gL_>0
+Id7b[fPl@D`3B47Qn15DP[0
 S1
-R4
-w1756789746
+R15
+R16
 8C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv
 FC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv
-!i122 2
-L0 9 66
-R5
-R6
+!i122 68
+L0 10 66
+R17
+R18
 r1
 !s85 0
 31
-R7
+R19
 !s107 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv|
 !i113 0
-R8
-R1
+R20
+R10
+vtop
+2C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv
+R13
+R14
+!i10b 1
+!s100 c_FnK3IQN=4Gm<Fz:f8CW2
+IOOjL9BIbVIz1USTM75=kW3
+S1
+R15
+R21
+8C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv
+FC:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv
+!i122 63
+L0 6 10
+R17
+R18
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv|
+!i113 0
+R20
+R10

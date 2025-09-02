@@ -5,6 +5,7 @@
 
 //Referenced E85 Lab_2 testbench provided tutorial by david harris to make this file
 
+	`timescale 1ps/1ps //timescale <time_unit>/<time_precision>
 
 module led_control_tb;
 	

@@ -1,15 +1,25 @@
 C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp.sv
+** Note: (vlog-1901) OptionFile "C:/Users/wchan/Documents/GitHub/e155Lab1/fpga/radiant_project/lab1_wc/vlog.opt" not found. Ignored.
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module seven_seg_disp
 
 Top level modules:
 	seven_seg_disp
 
-} {} {}} C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/seven_seg_disp_tb.sv
+} {} {}} C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/lab1_gd.sv
+** Note: (vlog-1901) OptionFile "C:/Users/wchan/Documents/GitHub/e155Lab1/fpga/radiant_project/lab1_wc/vlog.opt" not found. Ignored.
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module seven_seg_disp_tb
+-- Compiling module top
 
 Top level modules:
-	seven_seg_disp_tb
+	top
+
+} {} {}} C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/E155-Lab-1/fpga/lab1_gd/source/impl_1/led_control.sv
+** Note: (vlog-1901) OptionFile "C:/Users/wchan/Documents/GitHub/e155Lab1/fpga/radiant_project/lab1_wc/vlog.opt" not found. Ignored.
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module led_control
+
+Top level modules:
+	led_control
 
 } {} {}}
